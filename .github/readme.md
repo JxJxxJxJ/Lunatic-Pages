@@ -68,7 +68,7 @@ The snippets engine (which is the thing that makes our code go fast) that we're 
 
 ## :fire: <samp>Usage</samp>
 
-Now we're going to finally use the files from this repo. The LaTeX documents expect a folder with three files in the home directory. This is where boring stuff like definitions, macros, pretty much all you won't ouch goes... 
+Now we're going to finally use the files from this repo. The LaTeX documents expect a folder with three files in the home directory. This is where boring stuff like definitions, macros, pretty much all you won't touch goes... 
 
 <br>
 
