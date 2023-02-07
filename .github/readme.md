@@ -4,15 +4,17 @@
 
 <b>This is what I use to edit my notes using LaTex.</b> I heavily depend on snippets and custom definitions to make my workflow *_somewhat usable_* (:satisfied:).  
 
-It's intended to be use in a *_certain way_* so if you plan on getting this for your note-taking activities be wary of that.
+It's intended to be used in a *_certain way_* so if you plan on getting this for your note-taking activities be wary of that.
 
 <br>
 
 ## :star2: <samp>Showcase</samp>
 
 <p align="center">
-<a href="#table-of-contents"<img src="assets/toc.png"></a>
-<a href="#custom-definitions"<img src="assets/body.png"></a>
+<img src="assets/toc.png"/>
+</p>
+<p
+<img src="assets/body.png"/>
 </p>
 
 <p align="center">
