@@ -13,13 +13,16 @@ It's intended to be used in a *_certain way_* so if you plan on getting this for
 <p align="center">
 <img src="assets/toc.png"/>
 </p>
-<p
+
+<p align="center">
 <img src="assets/body.png"/>
 </p>
 
 <p align="center">
-<a href="#how-code-looks"<img src="assets/code.png"></a>
-<a href="how-snippet-looks"<img src="assets/gif.gif"></a>
+<img src="assets/code.png"/>
+
+<p align="center">
+<img src="assets/gif.gif"/>
 </p>
 
 <br>
