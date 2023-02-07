@@ -11,13 +11,13 @@ It's intended to be use in a *_certain way_* so if you plan on getting this for 
 ## :star2: <samp>Showcase</samp>
 
 <p align="center">
-<a href="#table-of-contents"<img width="150px" style="padding: 0 10px;" src="assets/toc.png"></a>
-<a href="#custom-definitions"<img width="150px" style="padding: 0 10px;" src="assets/body.png"></a>
+<a href="#table-of-contents"<img style="padding: 0 10px;" src="assets/toc.png"></a>
+<a href="#custom-definitions"<img style="padding: 0 10px;" src="assets/body.png"></a>
 </p>
 
 <p align="center">
-<a href="#how-code-looks"<img width="150px" style="padding: 0 10px;" src="assets/code.png"></a>
-<a href="how-snippet-looks"<img width="150px" style="padding: 0 10px;" src="assets/gif.gif"></a>
+<a href="#how-code-looks"<img style="padding: 0 10px;" src="assets/code.png"></a>
+<a href="how-snippet-looks"<img style="padding: 0 10px;" src="assets/gif.gif"></a>
 </p>
 
 <br>
