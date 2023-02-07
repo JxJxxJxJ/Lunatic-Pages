@@ -8,7 +8,7 @@ It's intended to be use in a *_certain way_* so if you plan on getting this for 
 
 <br>
 
-## :star2: <samp>Showcase</samp>.
+## :star2: <samp>Showcase</samp>
 
 <p align="center">
 <a <img width="150px" style="padding: 0 10px;" src="assets/toc.png"></a>
@@ -51,7 +51,7 @@ Same thing with Neovim, no surprises.
 sudo pacman -S neovim
 ```
 
-I did not mention it before, but LunarVim is *_just_* (:sweaty_smile:) a Neovim config, in their words it's 
+I did not mention it before, but LunarVim is *_just_* (:sweat_smile:) a Neovim config, in their words it's 
 
 >An IDE layer for Neovim with sane defaults. Completely free and community driven.
 
@@ -71,7 +71,7 @@ Now we're going to finally use the files from this repo. The LaTeX documents exp
 
 If you're reading this you might be a native or somewhat native English speaker... Or you're one of my Spanish speaking friends I sent this to and you're using some sort of magical hability to understand these words (also known as knowing a different language).
 
-Anyways, point is that many things here are in Spanish, it's in these 3 files where you are going to have to change certain words for the pretty stuff to be displayed in your language. Don't worry, I'll tell you where.
+Anyways, point is that many things here are in Spanish, it's in these 3 files where you are going to have to change certain words for the pretty stuff to be displayed in your language.
 
 <br>
 
@@ -95,6 +95,10 @@ Then make sure you have this at the beginning of your LaTeX document to be able 
 \input{\string~/mi-preamble-latex/letterfonts.tex}
 
 \begin{document}
+
+...
+
+\end{document}
 ```
 
 Of course you can change the directory structure as you wish, but make sure you are inputing the files back into your document. This is nothing different than a really big preamble, it's just to make it tidier.
@@ -134,3 +138,5 @@ Our snippets in the luasnippets folder work after we specify where we want them 
 <br>
 
 If you have all of this, you should be able to use the snippets defined in these files. I'm not going to cover them, you can use the ones I already use or create your owns. Just make sure you learn how to create them using *LuaSnips* not anything else, since there are many snippet engines.
+
+
