@@ -148,12 +148,17 @@ end ]]
 
   -- LaTeX: Set Notation
   s({ trig = "en", snippetType = "snippet" }, { t(" \\in ") }, { condition = in_mathzone }),
+  s({ trig = "inn", snippetType = "autosnippet" }, { t(" \\in ") }, { condition = in_mathzone }),
   s({ trig = "nen", snippetType = "snippet" }, { t(" \\nin ") }, { condition = in_mathzone }),
   s({ trig = "subset", snippetType = "snippet" }, { t(" \\subset ") }, { condition = in_mathzone }),
   s({ trig = "subcon", snippetType = "snippet" }, { t(" \\subset ") }, { condition = in_mathzone }),
   s({ trig = "UN", snippetType = "snippet" }, { t(" \\cup ") }, { condition = in_mathzone }),
   s({ trig = "IN", snippetType = "snippet" }, { t(" \\cap ") }, { condition = in_mathzone }),
 
+  -- LaTeX: Spaces in mathmode
+  s({ trig = "quad", snippetType = "autosnippet" }, { t(" \\quad ") }, { condition = in_mathzone }),
+  s({ trig = "qd", snippetType = "autosnippet" }, { t(" \\quad ") }, { condition = in_mathzone }),
+  s({ trig = ";;", snippetType = "autosnippet" }, { t(" \\; ") }, { condition = in_mathzone }),
   -- LaTeX: Lims and stuff
   s({ trig = 'Lim', regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta(
@@ -202,10 +207,15 @@ end ]]
     ),
     { condition = in_mathzone }),
 
-  s({ trig = 'ssum', regTrig = false, wordTrig = true, snippetType = "snippet" }, { t("\\sum") },
+  s({ trig = 'ssum', regTrig = false, wordTrig = true, snippetType = "autosnippet" }, { t("\\sum ") },
     { condition = in_mathzone }),
 
-  s({ trig = 'sprod', regTrig = false, wordTrig = true, snippetType = "snippet" }, { t("\\Prod") },
+  s({ trig = 'sprod', regTrig = false, wordTrig = true, snippetType = "autosnippet" }, { t("\\prod ") },
+    { condition = in_mathzone }),
+
+
+  -- LaTeX: mod binary operator
+  s({ trig = 'mod', regTrig = false, wordTrig = true, snippetType = "autosnippet" }, { t("\\bmod ") },
     { condition = in_mathzone }),
 
   -- LaTeX: easy () {}
@@ -228,6 +238,8 @@ end ]]
       }
     )
   ),
+
+
   -- -- LaTeX: Lowercase greek letters
   -- s({ trig = ";;(%l)", regTrig = true, wordTrig = false, snippetType = "autosnippet" }, {
   --   f(function(_, snip)
@@ -278,36 +290,41 @@ end ]]
   --   i(1),
   --   t("}"),
   -- }, { condition = in_mathzone }),
+  -- LaTeX: Max Min quantifiers
+  s({ trig = "bmax", wordTrig = false, snippetType = "autosnippet" }, t(" \\Max "), { condition = in_mathzone }),
+  s({ trig = "bmin", wordTrig = false, snippetType = "autosnippet" }, t(" \\Min "), { condition = in_mathzone }),
+  s({ trig = "max", wordTrig = false, snippetType = "autosnippet" }, t(" \\max "), { condition = in_mathzone }),
+  s({ trig = "min", wordTrig = false, snippetType = "autosnippet" }, t(" \\min "), { condition = in_mathzone }),
   -- LaTeX: Less than or equal to
-  s({ trig = "<=", wordTrig = false, snippetType = "autosnippet" }, t("\\leq"), { condition = in_mathzone }),
+  s({ trig = "<=", wordTrig = false, snippetType = "autosnippet" }, t(" \\leq "), { condition = in_mathzone }),
   -- LaTeX: Greater than or equal to
-  s({ trig = ">=", wordTrig = false, snippetType = "autosnippet" }, t("\\geq"), { condition = in_mathzone }),
+  s({ trig = ">=", wordTrig = false, snippetType = "autosnippet" }, t(" \\geq "), { condition = in_mathzone }),
   -- LaTeX: Times
-  s({ trig = "xx", wordTrig = false, snippetType = "autosnippet" }, t("\\times "), { condition = in_mathzone }),
+  s({ trig = "xx", wordTrig = false, snippetType = "autosnippet" }, t(" \\times "), { condition = in_mathzone }),
   -- LaTeX: Otimes
-  s({ trig = "box", wordTrig = false, snippetType = "autosnippet" }, t("\\bigotimes "), { condition = in_mathzone }),
-  s({ trig = "ox", wordTrig = false, snippetType = "autosnippet" }, t("\\otimes "), { condition = in_mathzone }),
+  s({ trig = "box", wordTrig = false, snippetType = "autosnippet" }, t(" \\bigotimes "), { condition = in_mathzone }),
+  s({ trig = "ox", wordTrig = false, snippetType = "autosnippet" }, t(" \\otimes "), { condition = in_mathzone }),
   -- LaTeX: Oplus
-  s({ trig = "bo+", wordTrig = false, snippetType = "autosnippet" }, t("\\bigoplus "), { condition = in_mathzone }),
-  s({ trig = "o+", wordTrig = false, snippetType = "autosnippet" }, t("\\oplus "), { condition = in_mathzone }),
+  s({ trig = "bo+", wordTrig = false, snippetType = "autosnippet" }, t(" \\bigoplus "), { condition = in_mathzone }),
+  s({ trig = "o+", wordTrig = false, snippetType = "autosnippet" }, t(" \\oplus "), { condition = in_mathzone }),
   -- LaTeX: Odot
-  s({ trig = "bo.", wordTrig = false, snippetType = "autosnippet" }, t("\\bigodot "), { condition = in_mathzone }),
-  s({ trig = "o.", wordTrig = false, snippetType = "autosnippet" }, t("\\odot "), { condition = in_mathzone }),
+  s({ trig = "bo.", wordTrig = false, snippetType = "autosnippet" }, t(" \\bigodot "), { condition = in_mathzone }),
+  s({ trig = "o.", wordTrig = false, snippetType = "autosnippet" }, t(" \\odot "), { condition = in_mathzone }),
   -- LaTeX: Center dot
-  s({ trig = "**", wordTrig = false, snippetType = "autosnippet" }, t("\\cdot "), { condition = in_mathzone }),
+  s({ trig = "**", wordTrig = false, snippetType = "autosnippet" }, t(" \\cdot "), { condition = in_mathzone }),
   -- LaTeX: Function Composition
-  s({ trig = "oo", wordTrig = false, snippetType = "autosnippet" }, t("\\circ "), { condition = in_mathzone }),
+  s({ trig = "oo", wordTrig = false, snippetType = "snippet" }, t(" \\circ "), { condition = in_mathzone }),
   -- LaTeX: Equivalence
-  s({ trig = "===", wordTrig = false, snippetType = "autosnippet" }, t("\\equiv "), { condition = in_mathzone }),
-  s({ trig = "equiv", wordTrig = true, snippetType = "snippet" }, t("\\equiv "), { condition = in_mathzone }),
+  s({ trig = "===", wordTrig = false, snippetType = "autosnippet" }, t(" \\equiv "), { condition = in_mathzone }),
+  s({ trig = "equiv", wordTrig = true, snippetType = "snippet" }, t(" \\equiv "), { condition = in_mathzone }),
   -- LaTeX: To
-  s({ trig = "->", wordTrig = false, snippetType = "autosnippet" }, t("\\to "), { condition = in_mathzone }),
-  s({ trig = "to", wordTrig = true, snippetType = "snippet" }, t("\\to "), { condition = in_mathzone }),
+  s({ trig = "->", wordTrig = false, snippetType = "autosnippet" }, t(" \\to "), { condition = in_mathzone }),
+  s({ trig = "to", wordTrig = true, snippetType = "autosnippet" }, t(" \\to "), { condition = in_mathzone }),
   -- LaTeX: Infty
-  s({ trig = "ooo", wordTrig = true, snippetType = "autosnippet" }, t("\\infty "), { condition = in_mathzone }),
-  s({ trig = "infty", wordTrig = true, snippetType = "snippet" }, t("\\infty "), { condition = in_mathzone }),
+  s({ trig = "ooo", wordTrig = true, snippetType = "autosnippet" }, t(" \\infty "), { condition = in_mathzone }),
+  s({ trig = "infty", wordTrig = true, snippetType = "snippet" }, t(" \\infty "), { condition = in_mathzone }),
   -- LaTeX: EmptySet
-  s({ trig = "empty", wordTrig = true, snippetType = "snippet" }, t("\\emptyset "), { condition = in_mathzone }),
+  s({ trig = "empty", wordTrig = true, snippetType = "snippet" }, t(" \\emptyset "), { condition = in_mathzone }),
   -- LaTeX: Math boldface
   s("bf", fmt([[\mathbf{{{}}}]], i(1)), { condition = in_mathzone }),
   -- LaTeX: Romanized math
@@ -317,11 +334,12 @@ end ]]
   -- LaTeX: Math script
   s("mscr", fmt([[\mathscr{{{}}}]], i(1)), { condition = in_mathzone }),
   -- LaTeX: Math text
-  s({ trig = "tt", wordTrig = false }, fmt([[\text{{{}}}]], i(1)), { condition = in_mathzone }),
+  s({ trig = "tt", wordTrig = true, snippettype = "autosnippet" }, fmt([[\text{{ {} }}]], i(1)),
+    { condition = in_mathzone }),
   -- LaTeX: Binary operator dots
-  s({ trig = "...", snippetType = "autosnippet" }, t("\\dots"), { condition = in_mathzone }),
+  s({ trig = "...", snippetType = "autosnippet" }, t("\\dots "), { condition = in_mathzone }),
   -- LaTeX: Cdots dots
-  s({ trig = "c...", snippetType = "autosnippet" }, t("\\cdots"), { condition = in_mathzone }),
+  s({ trig = "c...", snippetType = "autosnippet" }, t("\\cdots "), { condition = in_mathzone }),
   -- LaTeX: Square root
   s({ trig = "sqrt", snippetType = "autosnippet", wordTrig = false }, {
     t("\\sqrt[2]{"),

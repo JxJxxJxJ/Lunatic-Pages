@@ -348,6 +348,32 @@ return {
       }
     )
   ),
+  -- Lstep
+  s(
+    {
+      trig = ";lstep",
+      dscr = "=== { } mas facil.",
+      regTrig = false,
+      priority = 1000,
+      snippetType = "autosnippet"
+    },
+    fmt(
+    -- String of text
+      [[
+
+\lstep{ <> }
+
+<>
+]]     ,
+      { -- Nodes
+        i(1, "Contenido"),
+        i(0),
+      },
+      { -- Establezco que <> son los delimiters
+        delimiters = "<>"
+      }
+    )
+  ),
 
 
 }

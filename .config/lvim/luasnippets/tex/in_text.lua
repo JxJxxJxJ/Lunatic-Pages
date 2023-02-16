@@ -25,27 +25,73 @@ rec_ls = function()
 end
 
 return {
+  -- -- LaTeX: "=== { }" for logic steps
+  -- s({ trig = 'equivbrack', regTrig = false, wordTrig = true, snippetType = "autosnippet" },
+  --   fmta(
+  --     [[
+  --     $ \equiv \cbrack{ \texttt{<>} }$ <>
+  --     ]],
+  --     {
+  --       i(1),
+  --       i(0),
+  --     }
+  --   ),
+  --   { condition = in_text }
+  -- ),
+  -- s({ trig = 'equivbrack', regTrig = false, wordTrig = true, snippetType = "snippet" },
+  --   fmta(
+  --     [[
+  --     $ \equiv \cbrack{ \texttt{ <> } }$ <>
+  --     ]],
+  --     {
+  --       i(1),
+  --       i(0),
+  --     }
+  --   ),
+  --   { condition = in_text }
+  -- ),
+
+
   -- LaTeX: Enumerate environment
   s("enume", {
     t("\\begin{enumerate}"),
     c(1, {
+      t("[label=(\\arabic*)]"),
       t("[label=(\\alph*)]"),
       t("[label=(\\roman*)]"),
-      t("[label=(\\arabic*)]"),
     }),
-    t({ "", "\t\\item " }),
+    t({ "", "\t\t\\item " }),
     i(2),
-    d(3, rec_ls, {}),
+    t({ "", "\t\t\\item " }),
+    i(3),
+    t({ "", "\t\t\\item " }),
     -- i(0),
     t({ "", "\\end{enumerate}" }),
   }, { condition = in_text and begins_line }),
-  -- LaTeX: Recursive itemize
+  -- LaTeX: Recursive/notrecursive itemize
   s("itemi", {
-    t({ "\\begin{itemize}", "\t\\item " }),
+    t({ "\\begin{itemize}", "\t\t\\item " }),
     i(1),
-    d(2, rec_ls, {}),
+    -- d(2, rec_ls, {}),
     t({ "", "\\end{itemize}" })
   }, { condition = in_text and begins_line }),
+  s("ii", {
+    t("\\item "),
+    i(1),
+  }, { condition = in_text and begins_line }),
+
+
+  -- LaTeX: Chapter
+  s({ trig = ";chap", snippetType = "autosnippet" }, {
+    c(1, {
+      t("\\chapter{"),
+      t("\\chapter*{"),
+    }),
+    i(2),
+    t("}"),
+    i(0),
+  }, { condition = in_text }),
+
   -- LaTeX: Section
   s({ trig = ";sec", snippetType = "autosnippet" }, {
     c(1, {
@@ -84,7 +130,6 @@ return {
           t("$ "),
           i(1),
           t(" $ "),
-          i(0),
         }, { condition = in_text }),
       -- LaTeX: Display math mode
       s("dm", {
@@ -94,7 +139,7 @@ return {
       }, { condition = in_text }),
       -- LaTeX: Single-letter variables
       s(
-        { trig = " ([^aeouy%$%(%)%[%]%{%}%.%,%!])([%p%s])", regTrig = true, wordTrig = false },
+        { trig = " ([^aeouy%s%%$%(%)%[%]%{%}%.%,%!])([%p%s])", regTrig = true, wordTrig = false },
         f(function(_, snip)
           return " $" .. snip.captures[1] .. "$" .. snip.captures[2]
         end),
@@ -102,9 +147,23 @@ return {
       ),
       -- LaTeX: Quotations
       -- s('"', fmt([[``{}'']], i(1)), { condition = in_text }),
-      s('"', fmt([[``{}]], i(1)), { condition = in_text }),
+      s({ trig = '"', snippettype = "autosnippet" }, fmt([[``{}'' ]], i(1)), { condition = in_text }),
       -- LaTeX: Emphasis
       s("emph", fmt([[\emph{{{}}}]], i(1)), { condition = in_text }),
+
+      -- LaTeX: hyperlinks
+      s({ trig = ';link', regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+        fmta(
+          [[\href{ <> }{ <> } <> ]],
+          {
+            i(1, "Link"),
+            i(2, "Description"),
+            i(0),
+          }
+        ),
+        { condition = in_text }
+      ),
+
       -- LaTeX: Boldface
       s("bf", fmt([[\textbf{{{}}}]], i(1)), { condition = in_text }),
       -- LaTeX: Teletype

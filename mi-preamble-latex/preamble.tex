@@ -25,6 +25,10 @@
 \spanishdecimal{.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%% Space Between Lines %%%%
+\usepackage{setspace}
+\linespread{1.25}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage[most,many,breakable]{tcolorbox}
 \usepackage{xcolor}
@@ -640,6 +644,8 @@
 \newcommand{\pf}[2]{\begin{myproof}[#1]#2\end{myproof}}
 \newcommand{\nt}[1]{\begin{note}#1\end{note}}
 
+\newcommand{\lstep}[1]{$ \equiv \cbrack{\texttt{#1}}$} % logic steps
+
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
 		\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
 \newcommand\getcurrentref[1]{%
@@ -731,6 +737,10 @@
 \let\oldgeq\geq
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
+
+% I prefer Max and Min with first letter capitalized when talking about quantifiers
+\DeclareMathOperator{\Max}{Max}
+\DeclareMathOperator{\Min}{Min}
 
 % % redefine matrix env to allow for alignment, use r as default
 % \renewcommand*\env@matrix[1][r]{\hskip -\arraycolsep
