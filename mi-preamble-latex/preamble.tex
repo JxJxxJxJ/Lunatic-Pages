@@ -8,6 +8,7 @@
 \usepackage[varbb]{newpxmath}
 \usepackage{xfrac}
 \usepackage{mleftright}
+\usepackage{environ}
 \usepackage[makeroom]{cancel}
 \usepackage{mathtools}
 \usepackage{bookmark}
@@ -19,21 +20,20 @@
 	bookmarksnumbered=true,
 	bookmarksopen=true
 }
+
+
 %%%%%% Spanish Language %%%%%%
 \usepackage[spanish]{babel} 
 \spanishdecimal{.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%% Code Blocks %%%%%%%%
-\usepackage{minted}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% Space Between Lines %%%%
 \usepackage{setspace}
 \linespread{1.25}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[most,many,breakable]{tcolorbox}
-\usepackage{xcolor}
+\usepackage{xcolor,xspace}
 \usepackage{varwidth}
 \usepackage{varwidth}
 \usepackage{etoolbox}
@@ -42,6 +42,7 @@
 \usepackage{multicol,array}
 \usepackage{tikz-cd}
 \usetikzlibrary{mindmap}  % Mindmap drawing library 
+\usepackage{minted}
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
 \usepackage{import}
@@ -164,6 +165,55 @@
 	,separator sign none
 }
 
+%%%%%%%%% Code Blocks %%%%%%%%
+
+\tcbuselibrary{minted,skins,listings,theorems,hooks}
+
+\newtcblisting{haskellcode}{listing engine=minted,
+minted style=colorful,
+minted language=haskell,
+minted options={fontsize=\small,breaklines,autogobble,linenos,numbersep=3mm},
+colback=blue!5!white,colframe=blue!75!black,listing only,
+left=5mm,enhanced,
+overlay={\begin{tcbclipinterior}\fill[red!20!blue!20!white] (frame.south west)
+rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}}}
+
+
+% \newminted{haskell}{
+% gobble=0,
+% linenos,
+% mathescape=True,
+% style=colorful,
+% frame=lines,
+% autogobble,
+% numbersep=3mm,
+% fontsize=\small,
+% escapeinside=||,
+% mathescape=true
+% }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%================================
+% Steps
+%================================
+\tcbuselibrary{theorems,skins,hooks}
+\newtcolorbox{Steps}
+{%
+   left=5mm
+  ,enhanced
+	,breakable
+	,colback = blue!5!white
+  ,colframe = blue!75!black
+	% ,frame hidden
+	% ,boxrule = 0sp
+	% ,borderline north = {0pt}{0pt}{black!30!white}
+	% ,borderline south = {0pt}{0pt}{black!30!white}
+	% ,borderline east = {1pt}{0pt}{black!30!white}
+	% ,borderline west = {2pt}{0pt}{black!30!white}
+	,rounded corners
+	,description font = \mdseries
+	,separator sign none
+}
 %================================
 % Corollery
 %================================
@@ -644,6 +694,7 @@
 \newcommand{\clm}[3]{\begin{claim}{#1}{#2}#3\end{claim}}
 \newcommand{\wc}[2]{\begin{wconc}{#1}{}\setlength{\parindent}{1cm}#2\end{wconc}}
 \newcommand{\thmcon}[1]{\begin{Theoremcon}{#1}\end{Theoremcon}}
+\newcommand{\steps}[1]{\begin{Steps}{#1}\end{Steps}}
 \newcommand{\ex}[2]{\begin{Example}{#1}{}#2\end{Example}}
 \newcommand{\dfn}[2]{\begin{Definition}[colbacktitle=red!75!black]{#1}{}#2\end{Definition}}
 \newcommand{\dfnc}[2]{\begin{definition}[colbacktitle=red!75!black]{#1}{}#2\end{definition}}
@@ -652,7 +703,7 @@
 \newcommand{\pf}[2]{\begin{myproof}[#1]#2\end{myproof}}
 \newcommand{\nt}[1]{\begin{note}#1\end{note}}
 
-\newcommand{\lstep}[1]{$ \equiv \cbrack{\texttt{#1}}$} % logic steps
+\newcommand{\lstep}[1]{\textcolor{blue!75!black}{$ \equiv \cbrack{\texttt{#1}}$}} % logic steps
 
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
 		\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
@@ -669,6 +720,8 @@
 
 \newcommand{\mclm}[2]{\begin{myclaim}[#1]#2\end{myclaim}}
 \newenvironment{myclaim}[1][\claimname]{\proof[\bfseries #1: ]}{}
+
+
 
 \newcounter{mylabelcounter}
 

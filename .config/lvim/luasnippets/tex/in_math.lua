@@ -357,10 +357,12 @@ end ]]
   s({ trig = "c...", snippetType = "autosnippet" }, t("\\cdots "), { condition = in_mathzone }),
   -- LaTeX: blacktriangleright
   s({ trig = "inlist", wordTrig = false, snippetType = "autosnippet" }, t(" \\inlist "), { condition = in_mathzone }),
+  s({ trig = "|>", wordTrig = false, snippetType = "autosnippet" }, t(" \\inlist "), { condition = in_mathzone }),
   -- LaTeX: better etc in mathmode
   s({ trig = "etc", wordTrig = false, snippetType = "autosnippet" }, t(" \\etc "), { condition = in_mathzone }),
   -- LaTeX: def. symbol
   s({ trig = "def", wordTrig = false, snippetType = "autosnippet" }, t(" \\dot{=} "), { condition = in_mathzone }),
+  s({ trig = "=.", wordTrig = false, snippetType = "autosnippet" }, t(" \\dot{=} "), { condition = in_mathzone }),
   -- LaTeX: Square root
   s({ trig = "sqrt", snippetType = "autosnippet", wordTrig = false }, {
     t("\\sqrt[2]{"),
@@ -385,8 +387,8 @@ end ]]
     },
     f(function(_, snip)
       return string.format("\\overline{%s}", snip.captures[1])
-    end, {})
-  ),
+    end, {}),
+    { condition = in_mathzone }),
   s(
     {
       trig = "(%a)hat",

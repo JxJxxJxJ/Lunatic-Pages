@@ -161,7 +161,7 @@ return {
       }, { condition = in_text }),
       -- LaTeX: Single-letter variables
       s(
-        { trig = " ([^aeouy%s%%$%(%)%[%]%{%}%.%,%!])([%p%s])", regTrig = true, wordTrig = false },
+        { trig = " ([^aeouy%s%|%$%(%=%)%[%]%{%}%.%,%!%:%?%/%\\%`%;%'%-%_])([%p%s])", regTrig = true, wordTrig = false },
         f(function(_, snip)
           return " $" .. snip.captures[1] .. "$" .. snip.captures[2]
         end),
@@ -185,6 +185,15 @@ return {
         ),
         { condition = in_text }
       ),
+      -- LaTeX: Symbols in text
+      s({ trig = "->", snippetType = "autosnippet" }, { t(" $\\rightarrow$ ") }, { condition = in_text }),
+      -- LaTeX: Meant to used in minted enviroments when programming
+      s({ trig = "=.", wordTrig = false, snippetType = "autosnippet" }, t("|$\\dot{=}$|"), { condition = in_text }),
+      s({ trig = "lll", wordTrig = false, snippetType = "autosnippet" }, fmta("| <> |", i(1)), { condition = in_text }),
+      s({ trig = "emm", wordTrig = false, snippetType = "autosnippet" }, fmta("|$ <> $|", i(1)),
+        { condition = in_text }),
+      s({ trig = "|>", wordTrig = false, snippetType = "autosnippet" }, t("$ \\blacktriangleright $"),
+        { condition = in_text }),
 
       -- LaTeX: Boldface
       s("bf", fmt([[\textbf{{{}}}]], i(1)), { condition = in_text }),

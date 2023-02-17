@@ -374,6 +374,60 @@ return {
       }
     )
   ),
+  -- LaTeX: Code Enviroments using minted
+  s(
+    {
+      trig = ";src",
+      dscr = "Inicia el code environment.",
+      regTrig = false,
+      priority = 1000,
+      snippetType = "autosnippet"
+    },
+    fmt(
+    -- String of text
+      [[
+  \begin{<>code}
 
+  <>
+
+  \end{<>code}
+  ]]   ,
+      { -- Nodes
+        i(1),
+        i(2, "Codigo:"),
+        rep(1),
+      },
+      { -- Establezco que <> son los delimiters
+        delimiters = "<>"
+      }
+    )
+  ),
+  s(
+    {
+      trig = ";code",
+      dscr = "Inicia el code environment.",
+      regTrig = false,
+      priority = 1000,
+      snippetType = "autosnippet"
+    },
+    fmt(
+    -- String of text
+      [[
+  \begin{<>code}
+
+  <>
+
+  \end{<>code}
+  ]]   ,
+      { -- Nodes
+        i(1),
+        i(2, "Codigo:"),
+        rep(1),
+      },
+      { -- Establezco que <> son los delimiters
+        delimiters = "<>"
+      }
+    )
+  ),
 
 }
