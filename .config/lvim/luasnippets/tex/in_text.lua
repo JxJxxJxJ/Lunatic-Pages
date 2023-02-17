@@ -185,15 +185,15 @@ return {
         ),
         { condition = in_text }
       ),
-      -- LaTeX: Symbols in text
-      s({ trig = "->", snippetType = "autosnippet" }, { t(" $\\rightarrow$ ") }, { condition = in_text }),
-      -- LaTeX: Meant to used in minted enviroments when programming
-      s({ trig = "=.", wordTrig = false, snippetType = "autosnippet" }, t("|$\\dot{=}$|"), { condition = in_text }),
-      s({ trig = "lll", wordTrig = false, snippetType = "autosnippet" }, fmta("| <> |", i(1)), { condition = in_text }),
-      s({ trig = "emm", wordTrig = false, snippetType = "autosnippet" }, fmta("|$ <> $|", i(1)),
-        { condition = in_text }),
-      s({ trig = "|>", wordTrig = false, snippetType = "autosnippet" }, t("$ \\blacktriangleright $"),
-        { condition = in_text }),
+      -- -- LaTeX: Symbols in text
+      -- s({ trig = "->", snippetType = "autosnippet" }, { t(" $\\rightarrow$ ") }, { condition = in_text }),
+      -- -- LaTeX: Meant to used in minted enviroments when programming
+      -- s({ trig = "=.", wordTrig = false, snippetType = "autosnippet" }, t("|$\\dot{=}$|"), { condition = in_text }),
+      -- s({ trig = "lll", wordTrig = false, snippetType = "autosnippet" }, fmta("| <> |", i(1)), { condition = in_text }),
+      -- s({ trig = "emm", wordTrig = false, snippetType = "autosnippet" }, fmta("|$ <> $|", i(1)),
+      --   { condition = in_text }),
+      -- s({ trig = "|>", wordTrig = false, snippetType = "autosnippet" }, t("$ \\blacktriangleright $"),
+      --   { condition = in_text }),
 
       -- LaTeX: Boldface
       s("bf", fmt([[\textbf{{{}}}]], i(1)), { condition = in_text }),

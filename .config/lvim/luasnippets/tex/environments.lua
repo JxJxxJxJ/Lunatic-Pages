@@ -348,6 +348,35 @@ return {
       }
     )
   ),
+
+  -- Steps
+  s(
+    {
+      trig = ";steps",
+      dscr = "pasos logicos",
+      regTrig = false,
+      priority = 1000,
+      snippetType = "autosnippet"
+    },
+    fmt(
+    -- String of text
+      [[
+
+\steps{
+
+<>
+
+}
+]]     ,
+      { -- Nodes
+        i(1, "Contenido"),
+      },
+      { -- Establezco que <> son los delimiters
+        delimiters = "<>"
+      }
+    )
+  ),
+
   -- Lstep
   s(
     {
@@ -386,12 +415,12 @@ return {
     fmt(
     -- String of text
       [[
-  \begin{<>code}
+    \begin{<>code}
 
-  <>
+    <>
 
-  \end{<>code}
-  ]]   ,
+    \end{<>code}
+    ]] ,
       { -- Nodes
         i(1),
         i(2, "Codigo:"),
@@ -413,12 +442,12 @@ return {
     fmt(
     -- String of text
       [[
-  \begin{<>code}
+    \begin{<>code}
 
-  <>
+    <>
 
-  \end{<>code}
-  ]]   ,
+    \end{<>code}
+    ]] ,
       { -- Nodes
         i(1),
         i(2, "Codigo:"),

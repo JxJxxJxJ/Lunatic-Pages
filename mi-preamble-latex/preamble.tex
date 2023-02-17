@@ -13,6 +13,13 @@
 \usepackage{mathtools}
 \usepackage{bookmark}
 \usepackage{enumitem}
+
+\usepackage[spanish]{babel} 
+\spanishdecimal{.}
+
+\usepackage{setspace}
+\linespread{1.25}
+
 \usepackage{hyperref,theoremref}
 \hypersetup{
 	pdftitle={Notas},
@@ -20,18 +27,6 @@
 	bookmarksnumbered=true,
 	bookmarksopen=true
 }
-
-
-%%%%%% Spanish Language %%%%%%
-\usepackage[spanish]{babel} 
-\spanishdecimal{.}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%% Space Between Lines %%%%
-\usepackage{setspace}
-\linespread{1.25}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[most,many,breakable]{tcolorbox}
 \usepackage{xcolor,xspace}
 \usepackage{varwidth}
@@ -41,7 +36,7 @@
 \usepackage{nameref}
 \usepackage{multicol,array}
 \usepackage{tikz-cd}
-\usetikzlibrary{mindmap}  % Mindmap drawing library 
+\usetikzlibrary{mindmap} 
 \usepackage{minted}
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
@@ -75,8 +70,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SELF MADE COLORS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 \definecolor{myg}{RGB}{56, 140, 70}
 \definecolor{myb}{RGB}{45, 111, 177}
@@ -178,6 +171,24 @@ left=5mm,enhanced,
 overlay={\begin{tcbclipinterior}\fill[red!20!blue!20!white] (frame.south west)
 rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}}}
 
+\newtcblisting{ccode}{listing engine=minted,
+minted style=colorful,
+minted language=c,
+minted options={fontsize=\small,breaklines,autogobble,linenos,numbersep=3mm},
+colback=blue!5!white,colframe=blue!75!black,listing only,
+left=5mm,enhanced,
+overlay={\begin{tcbclipinterior}\fill[red!20!blue!20!white] (frame.south west)
+rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}}}
+
+\newtcblisting{cppcode}{listing engine=minted,
+minted style=colorful,
+minted language=cpp,
+minted options={fontsize=\small,breaklines,autogobble,linenos,numbersep=3mm},
+colback=blue!5!white,colframe=blue!75!black,listing only,
+left=5mm,enhanced,
+overlay={\begin{tcbclipinterior}\fill[red!20!blue!20!white] (frame.south west)
+rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}}}
+
 
 % \newminted{haskell}{
 % gobble=0,
@@ -212,7 +223,7 @@ rectangle ([xshift=5mm]frame.north west);\end{tcbclipinterior}}}
 	% ,borderline west = {2pt}{0pt}{black!30!white}
 	,rounded corners
 	,description font = \mdseries
-	,separator sign none
+  ,fontupper=\ttfamily
 }
 %================================
 % Corollery
