@@ -19,17 +19,19 @@
 	bookmarksnumbered=true,
 	bookmarksopen=true
 }
-
 %%%%%% Spanish Language %%%%%%
 \usepackage[spanish]{babel} 
 \spanishdecimal{.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%% Code Blocks %%%%%%%%
+\usepackage{minted}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% Space Between Lines %%%%
 \usepackage{setspace}
 \linespread{1.25}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \usepackage[most,many,breakable]{tcolorbox}
 \usepackage{xcolor}
 \usepackage{varwidth}
@@ -39,6 +41,7 @@
 \usepackage{nameref}
 \usepackage{multicol,array}
 \usepackage{tikz-cd}
+\usetikzlibrary{mindmap}  % Mindmap drawing library 
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage{comment} % enables the use of multi-line comments (\ifx \fi) 
 \usepackage{import}
@@ -62,6 +65,11 @@
 %\usepackage{pdfpages}
 %\usepackage{transparent}
 
+%%%% For Images %%%%
+\usepackage{graphicx}
+%Path relative to the .tex file containing the \includegraphics command
+\graphicspath{ {./images/} }
+%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SELF MADE COLORS
@@ -741,6 +749,15 @@
 % I prefer Max and Min with first letter capitalized when talking about quantifiers
 \DeclareMathOperator{\Max}{Max}
 \DeclareMathOperator{\Min}{Min}
+
+% Counting Operator for my classes
+\DeclareMathOperator{\N}{N}
+
+% List pertenence operator
+\DeclareMathOperator{\inlist}{\blacktriangleright}
+
+% To be able to use etcetera in mathmode
+\DeclareMathOperator{\etc}{etc}
 
 % % redefine matrix env to allow for alignment, use r as default
 % \renewcommand*\env@matrix[1][r]{\hskip -\arraycolsep

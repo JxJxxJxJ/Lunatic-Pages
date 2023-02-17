@@ -21,6 +21,7 @@ end
 
 
 return {
+
   -- easy differentials in mathzone
   s({ trig = "df", snippetType = "autosnippet" },
     { t("\\diff") },
@@ -137,15 +138,22 @@ end ]]
   s({ trig = "KK", snippetType = "autosnippet" }, { t(" \\KK ") }, { condition = in_mathzone }),
 
   -- LaTeX: Logic
-  s({ trig = "Forall", snippetType = "snippet" }, { t(" \\forall ") }, { condition = in_mathzone }),
-  s({ trig = "Exists", snippetType = "snippet" }, { t(" \\exists ") }, { condition = in_mathzone }),
-  s({ trig = "NExists", snippetType = "snippet" }, { t(" \\nexists ") }, { condition = in_mathzone }),
+  s({ trig = "forall", snippetType = "autosnippet" }, { t(" \\forall ") }, { condition = in_mathzone }),
+  s({ trig = "exists", snippetType = "autosnippet" }, { t(" \\exists ") }, { condition = in_mathzone }),
+  s({ trig = "nexists", snippetType = "autosnippet" }, { t(" \\nexists ") }, { condition = in_mathzone }),
   s({ trig = "neg", snippetType = "autosnippet" }, { t(" \\neg ") }, { condition = in_mathzone }),
   s({ trig = "lor", snippetType = "autosnippet" }, { t(" \\lor ") }, { condition = in_mathzone }),
   s({ trig = "land", snippetType = "autosnippet" }, { t(" \\land ") }, { condition = in_mathzone }),
   s({ trig = "=>", snippetType = "autosnippet" }, { t(" \\Rightarrow ") }, { condition = in_mathzone }),
+  s({ trig = "->", snippetType = "autosnippet" }, { t(" \\rightarrow ") }, { condition = in_mathzone }),
+  s({ trig = "<-", snippetType = "autosnippet" }, { t(" \\leftarrow ") }, { condition = in_mathzone }),
   s({ trig = "<=>", snippetType = "autosnippet" }, { t(" \\LeftRightarrow ") }, { condition = in_mathzone }),
+  s({ trig = "=!", snippetType = "autosnippet" }, { t(" \\neq ") }, { condition = in_mathzone }),
+  s({ trig = "=/=", snippetType = "autosnippet" }, { t(" \\neq ") }, { condition = in_mathzone }),
+  s({ trig = "neq", snippetType = "autosnippet" }, { t(" \\neq ") }, { condition = in_mathzone }),
 
+  -- LaTeX: # always scaped in mathmode
+  s({ trig = "#", snippetType = "autosnippet" }, { t(" \\#") }, { condition = in_mathzone }),
   -- LaTeX: Set Notation
   s({ trig = "en", snippetType = "snippet" }, { t(" \\in ") }, { condition = in_mathzone }),
   s({ trig = "inn", snippetType = "autosnippet" }, { t(" \\in ") }, { condition = in_mathzone }),
@@ -216,6 +224,9 @@ end ]]
 
   -- LaTeX: mod binary operator
   s({ trig = 'mod', regTrig = false, wordTrig = true, snippetType = "autosnippet" }, { t("\\bmod ") },
+    { condition = in_mathzone }),
+  -- LaTeX: counting operator
+  s({ trig = 'bN', regTrig = false, wordTrig = true, snippetType = "autosnippet" }, { t("\\N ") },
     { condition = in_mathzone }),
 
   -- LaTeX: easy () {}
@@ -292,13 +303,17 @@ end ]]
   -- }, { condition = in_mathzone }),
   -- LaTeX: Max Min quantifiers
   s({ trig = "bmax", wordTrig = false, snippetType = "autosnippet" }, t(" \\Max "), { condition = in_mathzone }),
+  s({ trig = "Max", wordTrig = false, snippetType = "autosnippet" }, t(" \\Max "), { condition = in_mathzone }),
   s({ trig = "bmin", wordTrig = false, snippetType = "autosnippet" }, t(" \\Min "), { condition = in_mathzone }),
+  s({ trig = "Min", wordTrig = false, snippetType = "autosnippet" }, t(" \\Min "), { condition = in_mathzone }),
   s({ trig = "max", wordTrig = false, snippetType = "autosnippet" }, t(" \\max "), { condition = in_mathzone }),
   s({ trig = "min", wordTrig = false, snippetType = "autosnippet" }, t(" \\min "), { condition = in_mathzone }),
   -- LaTeX: Less than or equal to
   s({ trig = "<=", wordTrig = false, snippetType = "autosnippet" }, t(" \\leq "), { condition = in_mathzone }),
+  s({ trig = "leq", wordTrig = false, snippetType = "autosnippet" }, t(" \\leq "), { condition = in_mathzone }),
   -- LaTeX: Greater than or equal to
   s({ trig = ">=", wordTrig = false, snippetType = "autosnippet" }, t(" \\geq "), { condition = in_mathzone }),
+  s({ trig = "geq", wordTrig = false, snippetType = "autosnippet" }, t(" \\geq "), { condition = in_mathzone }),
   -- LaTeX: Times
   s({ trig = "xx", wordTrig = false, snippetType = "autosnippet" }, t(" \\times "), { condition = in_mathzone }),
   -- LaTeX: Otimes
@@ -316,7 +331,7 @@ end ]]
   s({ trig = "oo", wordTrig = false, snippetType = "snippet" }, t(" \\circ "), { condition = in_mathzone }),
   -- LaTeX: Equivalence
   s({ trig = "===", wordTrig = false, snippetType = "autosnippet" }, t(" \\equiv "), { condition = in_mathzone }),
-  s({ trig = "equiv", wordTrig = true, snippetType = "snippet" }, t(" \\equiv "), { condition = in_mathzone }),
+  s({ trig = "equiv", wordTrig = true, snippetType = "autosnippet" }, t(" \\equiv "), { condition = in_mathzone }),
   -- LaTeX: To
   s({ trig = "->", wordTrig = false, snippetType = "autosnippet" }, t(" \\to "), { condition = in_mathzone }),
   s({ trig = "to", wordTrig = true, snippetType = "autosnippet" }, t(" \\to "), { condition = in_mathzone }),
@@ -340,6 +355,12 @@ end ]]
   s({ trig = "...", snippetType = "autosnippet" }, t("\\dots "), { condition = in_mathzone }),
   -- LaTeX: Cdots dots
   s({ trig = "c...", snippetType = "autosnippet" }, t("\\cdots "), { condition = in_mathzone }),
+  -- LaTeX: blacktriangleright
+  s({ trig = "inlist", wordTrig = false, snippetType = "autosnippet" }, t(" \\inlist "), { condition = in_mathzone }),
+  -- LaTeX: better etc in mathmode
+  s({ trig = "etc", wordTrig = false, snippetType = "autosnippet" }, t(" \\etc "), { condition = in_mathzone }),
+  -- LaTeX: def. symbol
+  s({ trig = "def", wordTrig = false, snippetType = "autosnippet" }, t(" \\dot{=} "), { condition = in_mathzone }),
   -- LaTeX: Square root
   s({ trig = "sqrt", snippetType = "autosnippet", wordTrig = false }, {
     t("\\sqrt[2]{"),

@@ -361,7 +361,7 @@ return {
     -- String of text
       [[
 
-\lstep{ <> }
+\lstep{<>}
 
 <>
 ]]     ,

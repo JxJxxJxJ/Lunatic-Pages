@@ -18,10 +18,10 @@ require("luasnip").config.set_config({ -- Setting LuaSnip config
 
 -- Keybindings for choice nodes
 -- set keybinds for both INSERT and VISUAL.
-vim.api.nvim_set_keymap("i", "<C-j>", "<Plug>luasnip-next-choice", {})
-vim.api.nvim_set_keymap("s", "<C-j>", "<Plug>luasnip-next-choice", {})
-vim.api.nvim_set_keymap("i", "<C-k>", "<Plug>luasnip-prev-choice", {})
-vim.api.nvim_set_keymap("s", "<C-k>", "<Plug>luasnip-prev-choice", {})
+vim.api.nvim_set_keymap("i", "<Tab>", "<Plug>luasnip-next-choice", {})
+vim.api.nvim_set_keymap("s", "<Tab>", "<Plug>luasnip-next-choice", {})
+-- vim.api.nvim_set_keymap("i", "<C-k>", "<Plug>luasnip-prev-choice", {})
+-- vim.api.nvim_set_keymap("s", "<C-k>", "<Plug>luasnip-prev-choice", {})
 
 local current_nsid = vim.api.nvim_create_namespace("LuaSnipChoiceListSelections")
 local current_win = nil

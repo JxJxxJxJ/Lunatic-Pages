@@ -33,3 +33,14 @@ vim.g.vimtex_quickfix_mode = 0
 vim.opt.conceallevel = 0
 vim.opt.wrap = true
 vim.g.tex_conceal = 'abdmg'
+
+
+vim.g.vimtex_compiler_latexmk = {
+  options = {
+    '-shell-escape',
+    -- '-verbose',
+    -- '-file-line-error',
+    -- '-synctex=1',
+    -- '-interaction=nonstopmode'
+  }
+}

@@ -1,0 +1,11 @@
+// not /lua y todo lo que tiene adentro
+!/lua
+
+// not luasnippets y todo lo que tiene adentro
+!/luasnippets
+
+// not config.lua solo del directorio root
+!/config.lua
+
+// Everything else
+*
