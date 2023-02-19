@@ -60,7 +60,7 @@ return {
   -- easy differentials in mathzone
   s({ trig = "df", snippetType = "autosnippet" },
     { t("\\diff") },
-    { condition = in_enumerate }
+    { condition = in_mathzone }
   ),
 
   -- langles rangles
