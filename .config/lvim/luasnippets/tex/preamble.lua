@@ -1,5 +1,4 @@
 ---@diagnostic disable: undefined-global
---
 return {
   s({ -- Table 1: snippet parameters
     trig = "generate-preamble",

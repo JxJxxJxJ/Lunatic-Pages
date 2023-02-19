@@ -1,5 +1,4 @@
 ---@diagnostic disable: undefined-global
-
 local in_comment = function()
   return vim.fn["vimtex#syntax#in_comment"]() == 1
 end
@@ -161,7 +160,8 @@ return {
       }, { condition = in_text }),
       -- LaTeX: Single-letter variables
       s(
-        { trig = " ([^aeouy%s%|%$%(%=%)%[%]%{%}%.%,%!%:%?%/%\\%`%;%'%-%_])([%p%s])", regTrig = true, wordTrig = false },
+        { trig = " ([^aeou%^%&y%s%|%$%(%=%)%[%]%{%}%.%,%!%:%?%/%\\%`%;%'%-%_])([%p%s])", regTrig = true, wordTrig = false }
+        ,
         f(function(_, snip)
           return " $" .. snip.captures[1] .. "$" .. snip.captures[2]
         end),

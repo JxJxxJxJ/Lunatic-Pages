@@ -30,7 +30,7 @@ vim.g.maplocalleader = '\\'
 --
 vim.g.tex_flavor = 'latex'
 vim.g.vimtex_quickfix_mode = 0
-vim.opt.conceallevel = 0
+vim.opt.conceallevel = 2
 vim.opt.wrap = true
 vim.g.tex_conceal = 'abdmg'
 
@@ -40,7 +40,9 @@ vim.g.vimtex_compiler_latexmk = {
     '-shell-escape',
     -- '-verbose',
     -- '-file-line-error',
-    -- '-synctex=1',
-    -- '-interaction=nonstopmode'
+    '-synctex=1',
+    '-interaction=nonstopmode'
   }
 }
+
+-- vim.g.vimtex_compiler_latexmk_engines = 'luatex'
