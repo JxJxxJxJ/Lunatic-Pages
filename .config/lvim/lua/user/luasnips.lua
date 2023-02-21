@@ -1,7 +1,7 @@
 ---@diagnostic disable: undefined-global
 
 -- load the variables file
-lvim.builtin.luasnip = vim.tbl_extend("force", { -- Setting LuaSnip config
+lvim.builtin.luasnip = vim.tbl_extend("force", lvim.builtin.luasnip, { -- Setting LuaSnip config
 
   -- -- load the variables file
   -- snip_env = require("user.my-things.luasnips.locals"),
@@ -17,7 +17,7 @@ lvim.builtin.luasnip = vim.tbl_extend("force", { -- Setting LuaSnip config
 
   -- Update text in repeated nodes lively, not after confirming its content
   update_events = 'TextChanged,TextChangedI',
-}, lvim.builtin.luasnip)
+})
 
 -- -- Keybindings for choice nodes
 -- -- set keybinds for both INSERT and VISUAL.
