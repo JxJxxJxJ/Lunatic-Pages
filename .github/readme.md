@@ -99,8 +99,8 @@ I use Neovim + Lunarvim for this, just make sure you have something similar to t
 │       ├── <...>. lua
 │       ├── <anything-n>.lua  
 │       │
-│       ├── luasnips.lua <- Here there are configurations
-│       │                   of LuaSnips' setup as a plugin.
+│       ├── luasnips.lua   #<- Here are the configurations
+│       │                  #   of LuaSnips' setup as a plugin.
 │       ├── <anything-1>.lua
 │       ├── <...>. lua
 │       └── <anything-m>.lua       
