@@ -1,8 +1,8 @@
 ---@diagnostic disable: undefined-global
 
-local in_mathzone = function()
-  return vim.fn["vimtex#syntax#in_mathzone"]() == 1
-end
+-- local in_mathzone = function()
+--   return vim.fn["vimtex#syntax#in_mathzone"]() == 1
+-- end
 
 -- local in_comment = function()
 --   return vim.fn["vimtex#syntax#in_comment"]() == 1
@@ -54,11 +54,8 @@ GREEK_LETTERS["t"] = "tau"
 
 return {
   -- easy differentials in mathzone
-  s({ trig = "df",
-    snippetType = "autosnippet"
-  },
-    { t("\\diff") }
-    ,
+  s({ trig = "df", snippetType = "autosnippet" },
+    { t("\\diff") },
     { condition = in_mathzone }
   ),
 

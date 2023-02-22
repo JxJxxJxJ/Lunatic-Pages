@@ -136,44 +136,44 @@ lvim.plugins = {
     end,
     ft = "tex",
   },
-  { "tpope/vim-repeat" },
-  { 'tpope/vim-surround' },
-  {
-    "tpope/vim-fugitive",
-    cmd = {
-      "G",
-      "Git",
-      "Gdiffsplit",
-      "Gread",
-      "Gwrite",
-      "Ggrep",
-      "GMove",
-      "GDelete",
-      "GBrowse",
-      "GRemove",
-      "GRename",
-      "Glgrep",
-      "Gedit"
-    },
-    ft = { "fugitive" }
-  },
-  {
-    "mrjones2014/nvim-ts-rainbow",
-  },
-  {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup({ "css", "scss", "html", "javascript" }, {
-        RGB = true, -- #RGB hex codes
-        RRGGBB = true, -- #RRGGBB hex codes
-        RRGGBBAA = true, -- #RRGGBBAA hex codes
-        rgb_fn = true, -- CSS rgb() and rgba() functions
-        hsl_fn = true, -- CSS hsl() and hsla() functions
-        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-      })
-    end,
-  },
+  -- { "tpope/vim-repeat" },
+  -- { 'tpope/vim-surround' },
+  -- {
+  --   "tpope/vim-fugitive",
+  --   cmd = {
+  --     "G",
+  --     "Git",
+  --     "Gdiffsplit",
+  --     "Gread",
+  --     "Gwrite",
+  --     "Ggrep",
+  --     "GMove",
+  --     "GDelete",
+  --     "GBrowse",
+  --     "GRemove",
+  --     "GRename",
+  --     "Glgrep",
+  --     "Gedit"
+  --   },
+  --   ft = { "fugitive" }
+  -- },
+  -- {
+  --   "mrjones2014/nvim-ts-rainbow",
+  -- },
+  -- {
+  --   "norcalli/nvim-colorizer.lua",
+  --   config = function()
+  --     require("colorizer").setup({ "css", "scss", "html", "javascript" }, {
+  --       RGB = true, -- #RGB hex codes
+  --       RRGGBB = true, -- #RRGGBB hex codes
+  --       RRGGBBAA = true, -- #RRGGBBAA hex codes
+  --       rgb_fn = true, -- CSS rgb() and rgba() functions
+  --       hsl_fn = true, -- CSS hsl() and hsla() functions
+  --       css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+  --       css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+  --     })
+  --   end,
+  -- },
 }
 
 -- rainbow parenthesis
@@ -184,7 +184,7 @@ reload("user.options") -- vim.opt. module
 reload("user.telescope") --telescope hot-reload themes, should be merged in future commits
 reload("user.latex") -- latex configs
 reload("user.keymappings") -- keymappings duh
-require("user.luasnips") -- luasnippets related configs
+reload("user.luasnips") -- luasnippets related configs
 reload("user.cmp") -- cmp configs mainly to not mess with snippets
 -- reload("user.minimap") -- automatically open mini.map and exclude buffers, filetypes
 reload("user.treesitter")
