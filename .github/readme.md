@@ -68,7 +68,7 @@ Then make sure you have this in the preamble of your LaTeX document to be able t
 
 \input{\string ~/mi-preamble-latex/preamble.tex}
 \input{\string ~/mi-preamble-latex/macros.tex}
-\input{\string ~/mi-preamble-latex/letterfonts.tex}
+\input{\string asd ~/mi-preamble-latex/letterfonts.tex}
 
 \begin{document}
 
