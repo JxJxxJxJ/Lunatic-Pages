@@ -1,12 +1,5 @@
 --[[
-lvim is the global options object
-
-Linters should be
-filled in as strings with either
-a global executable or a path to
-an executable
 ]]
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
 -- general
 lvim.log.level = "warn"
@@ -159,6 +152,28 @@ lvim.plugins = {
   },
   {
     "mrjones2014/nvim-ts-rainbow",
+  },
+  { "ggandor/leap.nvim" },
+  { "zbirenbaum/copilot-cmp",
+    -- event = "InsertEnter",
+    requires = { "zbirenbaum/copilot.lua" },
+    config = function()
+      vim.defer_fn(function()
+        require("copilot").setup() -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
+        require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
+      end, 100)
+    end,
+  },
+  {
+    "ggandor/leap.nvim",
+    as = "leap",
+    config = function()
+      require("leap").add_default_mappings()
+    end,
+  },
+  {
+    "folke/lsp-colors.nvim",
+    event = "BufRead",
   },
   {
     "norcalli/nvim-colorizer.lua",

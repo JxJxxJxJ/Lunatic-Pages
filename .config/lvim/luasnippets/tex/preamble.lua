@@ -19,8 +19,8 @@ return {
 \input{\string~/mi-preamble-latex/letterfonts.tex}
 
 
-\tittle{\Huge{<>}\\<>}
-\autohor{\Huge{<>}}
+\title{\Huge{<>}\\<>}
+\author{\Huge{<>}}
 \date{<>}
 
 \begin{document}
@@ -36,6 +36,7 @@ return {
 
 <>
 
+\end{document}
   ]]   ,
       -- The insert node is placed in the <> angle brackets
       { -- Nodes in each delimitier, in this case "<>"
