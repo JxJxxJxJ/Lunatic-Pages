@@ -129,7 +129,7 @@ Here are some resources I found useful when learning how to make snippets:
 
 - [Neovim setting up snippets with luasnip](https://sbulav.github.io/vim/neovim-setting-up-luasnip/).
 
-- [TJ DeVries' Introduction to LuaSnips video](https://www.youtube.com/watch?v=Dn800rlPIho)
+- [TJ DeVries' Introduction to LuaSnips video](https://www.youtube.com/watch?v=Dn800rlPIho).
 - [L3M0N4D3's snippet examples](https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua).
 
 <br>
