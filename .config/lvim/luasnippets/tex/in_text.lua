@@ -1,28 +1,28 @@
 ---@diagnostic disable: undefined-global
 
--- local in_comment = function()
---   return vim.fn["vimtex#syntax#in_comment"]() == 1
--- end
+local in_comment = function()
+  return vim.fn["vimtex#syntax#in_comment"]() == 1
+end
 
--- local in_mathzone = function()
---   return vim.fn["vimtex#syntax#in_mathzone"]() == 1
--- end
+local in_mathzone = function()
+  return vim.fn["vimtex#syntax#in_mathzone"]() == 1
+end
 
--- local in_text = function()
---   return not in_mathzone() and not in_comment()
--- end
+local in_text = function()
+  return not in_mathzone() and not in_comment()
+end
 
--- local rec_ls
--- rec_ls = function()
---   return sn(
---     nil,
---     c(1, {
---       -- Order is important, sn(...) first would cause infinite loop of expansion.
---       t(""),
---       sn(nil, { t({ "", "\t\\item " }), i(1), d(2, rec_ls, {}) }),
---     })
---   )
--- end
+local rec_ls
+rec_ls = function()
+  return sn(
+    nil,
+    c(1, {
+      -- Order is important, sn(...) first would cause infinite loop of expansion.
+      t(""),
+      sn(nil, { t({ "", "\t\\item " }), i(1), d(2, rec_ls, {}) }),
+    })
+  )
+end
 
 return {
   -- -- LaTeX: "=== { }" for logic steps
