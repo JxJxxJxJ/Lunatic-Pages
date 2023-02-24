@@ -1,18 +1,5 @@
 ---@diagnostic disable: undefined-global
 
-local GREEK_LETTERS = {}
-GREEK_LETTERS["a"] = "alpha"
-GREEK_LETTERS["b"] = "beta"
-GREEK_LETTERS["d"] = "delta"
-GREEK_LETTERS["e"] = "eps"
-GREEK_LETTERS["g"] = "gamma"
-GREEK_LETTERS["l"] = "lam"
-GREEK_LETTERS["o"] = "omega"
-GREEK_LETTERS["s"] = "sigma"
-GREEK_LETTERS["t"] = "tau"
-
-
-
 return {
   -- easy differentials in mathzone
   s({ trig = "df", snippetType = "autosnippet" },
@@ -32,7 +19,7 @@ return {
     { condition = in_mathzone }
   ),
 
-  -- ff -> \frac{i(1)}{i(2)}
+  -- Kff -> \frac{K}{i(2)} I believe..
   s({ trig = '([^%a])ff', regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta(
       [[<>\frac{<>}{<>} ]],
@@ -46,13 +33,14 @@ return {
   ),
 
   -- LaTeX: Matrices
-  s({ trig = "([pbv])mat_(%d)(%d)", regTrig = true, snippetType = "autosnippet" }, {
+  s({ trig = "([bpv])mat_(%d)(%d)", regTrig = true, snippetType = "autosnippet" }, {
     d(1, function(_, snip)
       local type = snip.captures[1] .. "matrix"
       local rows, cols = snip.captures[2], snip.captures[3]
       local nodes = {}
       local ts = 1
-      table.insert(nodes, t("\\begin{" .. type .. "}[rrrrrrrrrr]"))
+      local col_spec = string.rep("r", cols)
+      table.insert(nodes, t("\\begin{" .. type .. "}[{" .. col_spec .. "}]"))
       for _ = 1, rows, 1 do
         table.insert(nodes, t({ "", "\t" }))
         for _ = 1, cols, 1 do
@@ -117,6 +105,7 @@ return {
     ),
     { condition = in_mathzone }),
 
+  -- LaTeX: Cuantifiers
   s({ trig = 'ssum', regTrig = false, wordTrig = true, snippetType = "autosnippet" }, { t("\\sum ") },
     { condition = in_mathzone }),
 
@@ -199,6 +188,7 @@ return {
     i(1),
     t("}"),
   }, { condition = in_mathzone }),
+
   -- LaTeX: bar
   s(
     {

@@ -199,7 +199,7 @@ reload("user.options") -- vim.opt. module
 reload("user.telescope") --telescope hot-reload themes, should be merged in future commits
 reload("user.latex") -- latex configs
 reload("user.keymappings") -- keymappings duh
-reload("user.luasnips") -- luasnippets related configs
+require("user.luasnips") -- luasnippets related configs
 reload("user.cmp") -- cmp configs mainly to not mess with snippets
 -- reload("user.minimap") -- automatically open mini.map and exclude buffers, filetypes
 reload("user.treesitter")

@@ -2,20 +2,22 @@
 
 return {
   -- LaTeX: Binary operator dots
-  s({ trig = "...", snippetType = "autosnippet" }, t("\\dots "), { condition = in_mathzone }),
-  s({ trig = "...", snippetType = "autosnippet" }, t(" $\\dots$ "), { condition = in_text }),
+  s({ trig = "...", snippetType = "autosnippet" }, t(" \\dots "), { condition = in_mathzone }),
+  s({ trig = "...", snippetType = "autosnippet" }, t("$\\dots$"), { condition = in_text }),
 
   -- LaTeX: Cdots dots
-  s({ trig = "c...", snippetType = "autosnippet" }, t("\\cdots "), { condition = in_mathzone }),
-  s({ trig = "c...", snippetType = "autosnippet" }, t(" $\\cdots$ "), { condition = in_text }),
+  s({ trig = "c...", snippetType = "autosnippet" }, t(" \\cdots "), { condition = in_mathzone }),
+  s({ trig = "c...", snippetType = "autosnippet" }, t("$\\cdots$"), { condition = in_text }),
 
   -- LaTeX: listoperators
-  s({ trig = "inlist", wordTrig = false, snippetType = "autosnippet" }, t(" \\inlist "), { condition = in_mathzone }),
-  s({ trig = "inlist", wordTrig = false, snippetType = "autosnippet" }, t(" $\\inlist$ "), { condition = in_text }),
+  s({ trig = "inlist", wordTrig = false, snippetType = "autosnippet" }, t("\\inlist"), { condition = in_mathzone }),
+  s({ trig = "inlist", wordTrig = false, snippetType = "autosnippet" }, t("$\\inlist$"), { condition = in_text }),
   s({ trig = "|>", wordTrig = false, snippetType = "autosnippet" }, t(" \\inlist "), { condition = in_mathzone }),
-  s({ trig = "|>", wordTrig = false, snippetType = "autosnippet" }, t(" $\\inlist$ "), { condition = in_text }),
+  s({ trig = "|>", wordTrig = false, snippetType = "autosnippet" }, t("$\\inlist$"), { condition = in_text }),
   s({ trig = "take", wordTrig = false, snippetType = "autosnippet" }, t(" \\take "), { condition = in_mathzone }),
+  s({ trig = "take", wordTrig = false, snippetType = "autosnippet" }, t("$\\take$"), { condition = in_text }),
   s({ trig = "drop", wordTrig = false, snippetType = "autosnippet" }, t(" \\drop "), { condition = in_mathzone }),
+  s({ trig = "drop", wordTrig = false, snippetType = "autosnippet" }, t("$\\drop$"), { condition = in_text }),
 
   -- LaTeX: better etc in mathmode
   s({ trig = "etc", wordTrig = false, snippetType = "autosnippet" }, t(" \\etc "), { condition = in_mathzone }),
@@ -23,11 +25,12 @@ return {
   -- LaTeX: def. symbol
   s({ trig = "def", wordTrig = false, snippetType = "autosnippet" }, t(" \\dot{=} "), { condition = in_mathzone }),
   s({ trig = "=.", wordTrig = false, snippetType = "autosnippet" }, t(" \\dot{=} "), { condition = in_mathzone }),
-  s({ trig = "=.", wordTrig = false, snippetType = "autosnippet" }, t(" $\\dot{=}$ "), { condition = in_text }),
+  s({ trig = "=.", wordTrig = false, snippetType = "autosnippet" }, t("$\\dot{=}$"), { condition = in_text }),
 
   -- LaTeX: leadsto symbol
   s({ trig = "leadsto", wordTrig = false, snippetType = "autosnippet" }, t(" \\leadsto "), { condition = in_mathzone }),
-  s({ trig = "leadsto", wordTrig = false, snippetType = "autosnippet" }, t(" $\\leadsto$ "), { condition = in_text }),
+  s({ trig = "leadsto", wordTrig = false, snippetType = "autosnippet" }, t("$\\leadsto$"), { condition = in_text }),
+  s({ trig = "lto", wordTrig = false, snippetType = "autosnippet" }, t(" \\leadsto "), { condition = in_mathzone }),
 
   -- LaTeX: lrangle
   s({ trig = "langle", snippetType = "snippet" }, { t(" \\langle ") }, { condition = in_mathzone }),
@@ -67,8 +70,11 @@ return {
 
   -- LaTeX: Logic
   s({ trig = "forall", snippetType = "autosnippet" }, { t(" \\forall ") }, { condition = in_mathzone }),
+  s({ trig = "FA", snippetType = "autosnippet" }, { t(" \\forall ") }, { condition = in_mathzone }),
   s({ trig = "exists", snippetType = "autosnippet" }, { t(" \\exists ") }, { condition = in_mathzone }),
+  s({ trig = "EX", snippetType = "autosnippet" }, { t(" \\exists ") }, { condition = in_mathzone }),
   s({ trig = "nexists", snippetType = "autosnippet" }, { t(" \\nexists ") }, { condition = in_mathzone }),
+  s({ trig = "NEX", snippetType = "autosnippet" }, { t(" \\nexists ") }, { condition = in_mathzone }),
   s({ trig = "neg", snippetType = "autosnippet" }, { t(" \\neg ") }, { condition = in_mathzone }),
   s({ trig = "lor", snippetType = "autosnippet" }, { t(" \\lor ") }, { condition = in_mathzone }),
   s({ trig = "lor", snippetType = "autosnippet" }, { t(" $\\lor$ ") }, { condition = in_text }),
@@ -87,12 +93,16 @@ return {
 
   -- LaTeX: Set Notation
   s({ trig = "en", snippetType = "snippet" }, { t(" \\in ") }, { condition = in_mathzone }),
-  s({ trig = "inn", snippetType = "autosnippet" }, { t(" \\in ") }, { condition = in_mathzone }),
+  s({ trig = "in", snippetType = "snippet" }, { t(" \\in ") }, { condition = in_mathzone }),
+  -- s({ trig = "inn", snippetType = "autosnippet" }, { t(" \\in ") }, { condition = in_mathzone }),
   s({ trig = "nen", snippetType = "snippet" }, { t(" \\nin ") }, { condition = in_mathzone }),
+  s({ trig = "nin", snippetType = "snippet" }, { t(" \\nin ") }, { condition = in_mathzone }),
   s({ trig = "subset", snippetType = "snippet" }, { t(" \\subset ") }, { condition = in_mathzone }),
   s({ trig = "subcon", snippetType = "snippet" }, { t(" \\subset ") }, { condition = in_mathzone }),
   s({ trig = "UN", snippetType = "snippet" }, { t(" \\cup ") }, { condition = in_mathzone }),
-  s({ trig = "IN", snippetType = "snippet" }, { t(" \\cap ") }, { condition = in_mathzone }),
+  s({ trig = "union", snippetType = "snippet" }, { t(" \\cup ") }, { condition = in_mathzone }),
+  s({ trig = "disjunction", snippetType = "snippet" }, { t(" \\cap ") }, { condition = in_mathzone }),
+  s({ trig = "disjuncion", snippetType = "snippet" }, { t(" \\cap ") }, { condition = in_mathzone }),
 
   -- LaTeX: Spaces in mathmode
   s({ trig = "quad", snippetType = "autosnippet" }, { t(" \\quad ") }, { condition = in_mathzone }),

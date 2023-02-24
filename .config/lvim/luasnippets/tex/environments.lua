@@ -12,7 +12,7 @@ return {
   }, fmt(
   -- String of text
     [[
-\dfn{<>}{<>} 
+\dfn{<>}{<>}
 
 <>
 ]]   ,
@@ -38,7 +38,7 @@ return {
     fmt(
     -- String of text
       [[
-\prob{<>}{<>} 
+\prob{<>}{<>}
 
 <>
 ]]     ,
@@ -64,7 +64,7 @@ return {
     fmt(
     -- String of text
       [[
-\qs{<>}{<>} 
+\qs{<>}{<>}
 
 <>
 ]]     ,
@@ -90,7 +90,7 @@ return {
     fmt(
     -- String of text
       [[
-\sol{<>} 
+\sol{<>}
 
 <>
 ]]     ,
@@ -115,7 +115,7 @@ return {
     fmt(
     -- String of text
       [[
-\nt{<>} 
+\nt{<>}
 
 <>
 ]]     ,
@@ -140,7 +140,7 @@ return {
     fmt(
     -- String of text
       [[
-\clm{<>}{}{<>} 
+\clm{<>}{}{<>}
 
 <>
 ]]     ,
@@ -167,7 +167,7 @@ return {
     fmt(
     -- String of text
       [[
-\ex{<>}{<>} 
+\ex{<>}{<>}
 
 <>
 ]]     ,
@@ -194,7 +194,7 @@ return {
     fmt(
     -- String of text
       [[
-\thm{<>}{<>} 
+\thm{<>}{<>}
 
 <>
 ]]     ,
@@ -223,7 +223,7 @@ return {
       [[
 \begin{myproof}
 
-<> 
+<>
 
 \end{myproof}
 
@@ -320,6 +320,34 @@ return {
     )
   ),
 
+  -- Prog
+  s(
+    {
+      trig = ";prog",
+      dscr = "para especificar programas con la misma cajita",
+      regTrig = false,
+      priority = 1000,
+      snippetType = "autosnippet"
+    },
+    fmt(
+    -- String of text
+      [[
+
+\steps{
+
+<>
+
+}
+]]     ,
+      { -- Nodes
+        i(1, "Contenido"),
+      },
+      { -- Establezco que <> son los delimiters
+        delimiters = "<>"
+      }
+    )
+  ),
+
   -- Steps
   s(
     {
@@ -374,6 +402,7 @@ return {
       }
     )
   ),
+
   -- LaTeX: Code Enviroments using minted
   s(
     {
@@ -429,5 +458,4 @@ return {
       }
     )
   ),
-
 }
