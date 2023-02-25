@@ -1,3 +1,5 @@
+-- ~/.config/lvim/config.lua
+
 --[[
 ]]
 
@@ -189,6 +191,7 @@ lvim.plugins = {
       })
     end,
   },
+  -- { 'JxJxxJxJ/DirHead', config = function() require('dirhead').setup() end }
 }
 
 -- rainbow parenthesis
@@ -201,5 +204,4 @@ reload("user.latex") -- latex configs
 reload("user.keymappings") -- keymappings duh
 require("user.luasnips") -- luasnippets related configs
 reload("user.cmp") -- cmp configs mainly to not mess with snippets
--- reload("user.minimap") -- automatically open mini.map and exclude buffers, filetypes
-reload("user.treesitter")
+reload("user.treesitter") -- treesitter related configs
