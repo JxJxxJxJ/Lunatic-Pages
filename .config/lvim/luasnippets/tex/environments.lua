@@ -21,7 +21,7 @@ return {
       i(2, "Contenido:"),
       i(0),
     },
-    { -- Establezco que <> son los delimiters
+    { -- Stablish <> as delimiters
       delimiters = "<>"
     }
   )
@@ -47,7 +47,7 @@ return {
         i(2, "Contenido:"),
         i(0),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
@@ -73,7 +73,7 @@ return {
         i(2, "Contenido:"),
         i(0),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
@@ -98,7 +98,7 @@ return {
         i(1, "Contenido:"),
         i(0),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
@@ -123,7 +123,7 @@ return {
         i(1, "Contenido:"),
         i(0),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
@@ -150,7 +150,7 @@ return {
         i(2, "Contenido:"),
         i(0),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
@@ -177,7 +177,7 @@ return {
         i(2, "Contenido:"),
         i(0),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
@@ -204,7 +204,7 @@ return {
         i(2, "Contenido:"),
         i(0),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
@@ -234,7 +234,7 @@ return {
         i(1, "Contenido:"),
         i(0),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
@@ -261,7 +261,7 @@ return {
         i(2, "Contenido:"),
         i(0),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
@@ -288,7 +288,7 @@ return {
         i(2, "Contenido:"),
         i(0),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
@@ -314,7 +314,7 @@ return {
         i(2, "Contenido:"),
         i(0),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
@@ -342,7 +342,7 @@ return {
       { -- Nodes
         i(1, "Contenido"),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
@@ -370,7 +370,7 @@ return {
       { -- Nodes
         i(1, "Contenido"),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
@@ -397,7 +397,7 @@ return {
         i(1, "Contenido"),
         i(0),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
@@ -426,7 +426,7 @@ return {
         i(2, "Codigo:"),
         rep(1),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
@@ -453,7 +453,7 @@ return {
         i(2, "Codigo:"),
         rep(1),
       },
-      { -- Establezco que <> son los delimiters
+      { -- Stablish <> as delimiters
         delimiters = "<>"
       }
     )
