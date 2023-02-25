@@ -191,7 +191,6 @@ lvim.plugins = {
       })
     end,
   },
-  -- { 'JxJxxJxJ/DirHead', config = function() require('dirhead').setup() end }
 }
 
 -- rainbow parenthesis
