@@ -2,9 +2,12 @@
 
 require("luasnip").config.set_config({ -- Setting LuaSnip config
 
+  -- Fix dumb tab behavior supposedely
+  region_check_events = 'InsertEnter',
+  delete_check_events = 'InsertLeave',
+
   -- load the variables file
   snip_env = require("user.my-things.luasnips.locals"),
-
   -- Enable autotriggered snippets
   enable_autosnippets = true,
 
