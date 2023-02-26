@@ -8,8 +8,9 @@ return {
     -- d(2, rec_ls, {}),
     t({ "", "\\end{itemize}" })
   }, { condition = in_text and begins_line }),
+
   s("ii", {
     t("\\item "),
     i(1),
-  }, { condition = in_text and begins_line }),
+  }, { condition = in_itemize }),
 }

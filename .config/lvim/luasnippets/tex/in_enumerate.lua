@@ -18,4 +18,10 @@ return {
     -- i(0),
     t({ "", "\\end{enumerate}" }),
   }, { condition = in_text and begins_line }),
+
+  s("ii", {
+    t("\\item "),
+    i(1),
+  }, { condition = in_enumerate }),
+
 }

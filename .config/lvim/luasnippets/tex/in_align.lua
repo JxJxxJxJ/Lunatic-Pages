@@ -24,5 +24,5 @@ return {
   s("alii", {
     t("&= "),
     i(1),
-  }, { condition = in_text and begins_line }),
+  }, { condition = in_align }),
 }
