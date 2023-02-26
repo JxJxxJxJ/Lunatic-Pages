@@ -123,14 +123,6 @@ lvim.plugins = {
       require("better_escape").setup()
     end,
   },
-  {
-    "iurimateus/luasnip-latex-snippets.nvim",
-    requires = { "L3MON4D3/LuaSnip", "lervag/vimtex" },
-    config = function()
-      require 'luasnip-latex-snippets'.setup()
-    end,
-    ft = "tex",
-  },
   { "tpope/vim-repeat" },
   { 'tpope/vim-surround' },
   {
