@@ -155,7 +155,6 @@ lvim.plugins = {
   {
     "mrjones2014/nvim-ts-rainbow",
   },
-  { "ggandor/leap.nvim" },
   { "zbirenbaum/copilot-cmp",
     -- event = "InsertEnter",
     requires = { "zbirenbaum/copilot.lua" },
