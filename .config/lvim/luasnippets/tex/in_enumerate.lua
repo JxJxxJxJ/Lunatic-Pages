@@ -2,7 +2,7 @@
 
 return {
   -- LaTeX: Enumerate environment
-  s("enume", {
+  s({ trig = "enumerate", snippetType = "autosnippet" }, {
     t("\\begin{enumerate}"),
     c(1, {
       t("[label=(\\arabic*)]"),
@@ -19,7 +19,7 @@ return {
     t({ "", "\\end{enumerate}" }),
   }, { condition = in_text and begins_line }),
 
-  s("ii", {
+  s({ trig = "ii", snippetType = "autosnippet" }, {
     t("\\item "),
     i(1),
   }, { condition = in_enumerate }),

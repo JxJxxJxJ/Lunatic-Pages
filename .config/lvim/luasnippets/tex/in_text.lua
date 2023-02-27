@@ -2,36 +2,6 @@
 
 return {
 
-  -- LaTeX: Enumerate environment
-  s("enume", {
-    t("\\begin{enumerate}"),
-    c(1, {
-      t("[label=(\\arabic*)]"),
-      t("[label=(\\alph*)]"),
-      t("[label=(\\roman*)]"),
-    }),
-    t({ "", "\t\t\\item " }),
-    i(2),
-    t({ "", "\t\t\\item " }),
-    i(3),
-    t({ "", "\t\t\\item " }),
-    i(4),
-    -- i(0),
-    t({ "", "\\end{enumerate}" }),
-  }, { condition = in_text and begins_line }),
-  -- LaTeX: Recursive/notrecursive itemize
-  s("itemi", {
-    t({ "\\begin{itemize}", "\t\t\\item " }),
-    i(1),
-    -- d(2, rec_ls, {}),
-    t({ "", "\\end{itemize}" })
-  }, { condition = in_text and begins_line }),
-  s("ii", {
-    t("\\item "),
-    i(1),
-  }, { condition = in_text and begins_line }),
-
-
   -- LaTeX: Chapter
   s({ trig = ";chap", snippetType = "autosnippet" }, {
     c(1, {
