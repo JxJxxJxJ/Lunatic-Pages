@@ -3,12 +3,13 @@
 return {
   -- LaTeX: Enumerate environment
   s({ trig = "enumerate", snippetType = "autosnippet" }, {
-    t("\\begin{enumerate}"),
+    t("\\begin{enumerate}[label=(\\"),
     c(1, {
-      t("[label=(\\arabic*)]"),
-      t("[label=(\\alph*)]"),
-      t("[label=(\\roman*)]"),
+      t("arabic"),
+      t("alph"),
+      t("roman"),
     }),
+    t({ "*)]" }),
     t({ "", "\t\t\\item " }),
     i(2),
     t({ "", "\t\t\\item " }),

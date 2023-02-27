@@ -52,3 +52,20 @@ if cmp_ok and luasnip_ok then
     fallback()
   end)
 end
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-- Mappings to move between choice nodes
+local ls = require("luasnip")
+vim.keymap.set({ "i", "s" }, "<C-l>", function()
+  if ls.choice_active() then
+    ls.change_choice(1)
+  end
+end)
+vim.keymap.set({ "i", "s" }, "<C-h>", function()
+  if ls.choice_active() then
+    ls.change_choice(-1)
+  end
+end)
