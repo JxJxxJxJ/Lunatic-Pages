@@ -195,3 +195,4 @@ reload("user.keymappings") -- keymappings duh
 require("user.luasnips") -- luasnippets related configs
 reload("user.cmp") -- cmp configs mainly to not mess with snippets
 reload("user.treesitter") -- treesitter related configs
+reload("user.autocommands") -- guess what this is
