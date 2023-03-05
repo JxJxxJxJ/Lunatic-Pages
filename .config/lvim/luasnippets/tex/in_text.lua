@@ -47,7 +47,6 @@ return {
   }, { condition = in_text }),
 },
     {
-
       -- LaTeX: Inline math mode
       s({ trig = "mm", snippetType = "autosnippet" },
         {
@@ -60,7 +59,7 @@ return {
       s("dm", {
         t({ "\\[", "\t" }),
         i(0),
-        t({ "", "\\]" }),
+        t({ "", ".\\]" }),
       }, { condition = in_text }),
 
       -- LaTeX: Single-letter variables

@@ -1,6 +1,42 @@
 ---@diagnostic disable: undefined-global
 
 return {
+
+  -- easy leftright anything
+  s({ trig = "lr()", snippetType = "autosnippet" },
+    { fmta(
+      [[\left( <> \right) <> ]],
+      {
+        i(1),
+        i(0)
+      }
+    ),
+    },
+    { condition = in_mathzone }
+  ),
+  s({ trig = "lr[]", snippetType = "autosnippet" },
+    { fmta(
+      [[\left[ <> \right] <> ]],
+      {
+        i(1),
+        i(0)
+      }
+    ),
+    },
+    { condition = in_mathzone }
+  ),
+  s({ trig = "lr{}", snippetType = "autosnippet" },
+    { fmta(
+      [[\left{ <> \right} <> ]],
+      {
+        i(1),
+        i(0)
+      }
+    ),
+    },
+    { condition = in_mathzone }
+  ),
+
   -- easy differentials in mathzone
   s({ trig = "df", snippetType = "autosnippet" },
     { t("\\diff") },
