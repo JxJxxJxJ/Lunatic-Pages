@@ -24,6 +24,10 @@ local in_itemize = function()
   return vim.fn["vimtex#env#is_inside"]("itemize")[1] ~= 0
 end
 
+local in_cases = function()
+  return vim.fn["vimtex#env#is_inside"]("cases")[1] ~= 0
+end
+
 local begins_line = function()
   local cur_line = vim.api.nvim_get_current_line()
   -- Checks if the current line consists of whitespace and then the snippet
