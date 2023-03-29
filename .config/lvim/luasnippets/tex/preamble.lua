@@ -1,22 +1,23 @@
 ---@diagnostic disable: undefined-global
 
 return {
-  s({ -- Table 1: snippet parameters
-    trig = "generate-preamble",
-    dscr = "Añade lo basico para comenzar a escribir un documento.",
-    regTrig = false,
-    priority = 1000,
-    snippetType = "autosnippet"
-  }, -- Table 2: snippet nodes
-    fmt(-- Uso fmt para que lo que ponga abajo sea mas parecido a lo generado por el snippet.
+  s({
+      -- Table 1: snippet parameters
+      trig = "generate-preamble",
+      dscr = "Añade lo basico para comenzar a escribir un documento.",
+      regTrig = false,
+      priority = 1000,
+      snippetType = "autosnippet"
+    },   -- Table 2: snippet nodes
+    fmt( -- Uso fmt para que lo que ponga abajo sea mas parecido a lo generado por el snippet.
     -- [[ ]] are for multiline of text
       [[
 \documentclass{report}
 
 
-\input{\string~/mi-preamble-latex/preamble.tex}
-\input{\string~/mi-preamble-latex/macros.tex}
-\input{\string~/mi-preamble-latex/letterfonts.tex}
+\input{\string ~/mi-preamble-latex/preamble.tex}
+\input{\string ~/mi-preamble-latex/macros.tex}
+\input{\string ~/mi-preamble-latex/letterfonts.tex}
 
 
 \title{\Huge{<>}\\<>}
@@ -37,7 +38,7 @@ return {
 <>
 
 \end{document}
-  ]]   ,
+  ]],
       -- The insert node is placed in the <> angle brackets
       { -- Nodes in each delimitier, in this case "<>"
         i(1, "Título:"),

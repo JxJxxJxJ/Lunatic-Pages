@@ -30,7 +30,7 @@ vim.g.maplocalleader = '\\'
 --
 vim.g.tex_flavor = 'latex'
 vim.g.vimtex_quickfix_mode = 0
-vim.opt.conceallevel = 0
+vim.opt.conceallevel = 1
 vim.opt.wrap = true
 vim.g.tex_conceal = 'abdmg'
 

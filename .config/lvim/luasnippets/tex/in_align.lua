@@ -21,8 +21,23 @@ return {
     { condition = in_text }
   ),
   -- for quick &=
-  s("alii", {
+  s({ trig = "alii", snippetType = "autosnippet" }, {
     t("&= "),
     i(1),
   }, { condition = in_align }),
+
+  -- easy newline
+  s({ trig = 'nn', regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    fmta(
+      [[
+\\
+<>
+      ]],
+      {
+        i(1),
+      }
+    ),
+    { condition = in_align }
+  ),
+
 }

@@ -2,7 +2,6 @@
 
 --[[
 ]]
-
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
@@ -147,12 +146,13 @@ lvim.plugins = {
   {
     "mrjones2014/nvim-ts-rainbow",
   },
-  { "zbirenbaum/copilot-cmp",
+  {
+    "zbirenbaum/copilot-cmp",
     -- event = "InsertEnter",
     requires = { "zbirenbaum/copilot.lua" },
     config = function()
       vim.defer_fn(function()
-        require("copilot").setup() -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
+        require("copilot").setup()     -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
         require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
       end, 100)
     end,
@@ -172,13 +172,13 @@ lvim.plugins = {
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup({ "css", "scss", "html", "javascript" }, {
-        RGB = true, -- #RGB hex codes
-        RRGGBB = true, -- #RRGGBB hex codes
+        RGB = true,      -- #RGB hex codes
+        RRGGBB = true,   -- #RRGGBB hex codes
         RRGGBBAA = true, -- #RRGGBBAA hex codes
-        rgb_fn = true, -- CSS rgb() and rgba() functions
-        hsl_fn = true, -- CSS hsl() and hsla() functions
-        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+        rgb_fn = true,   -- CSS rgb() and rgba() functions
+        hsl_fn = true,   -- CSS hsl() and hsla() functions
+        css = true,      -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true,   -- Enable all CSS *functions*: rgb_fn, hsl_fn
       })
     end,
   },
@@ -188,11 +188,13 @@ lvim.plugins = {
 lvim.builtin.treesitter.rainbow.enable = true
 
 -- Requires (cache) / Reload (hot reload) .lua files in ./lua/user/
-reload("user.options") -- vim.opt. module
-reload("user.telescope") --telescope hot-reload themes, should be merged in future commits
-reload("user.latex") -- latex configs
-reload("user.keymappings") -- keymappings duh
-require("user.luasnips") -- luasnippets related configs
-reload("user.cmp") -- cmp configs mainly to not mess with snippets
-reload("user.treesitter") -- treesitter related configs
+reload("user.options")      -- vim.opt. module
+reload("user.telescope")    -- telescope hot-reload themes, should be merged in future commits
+reload("user.latex")        -- latex configs
+reload("user.keymappings")  -- keymappings duh
+require("user.luasnips")    -- luasnippets related configs
+reload("user.cmp")          -- cmp configs mainly to not mess with snippets
+reload("user.treesitter")   -- treesitter related configs
 reload("user.autocommands") -- guess what this is
+reload("user.lsp")          -- Errors in c/cpp
+reload("user.dap")          -- dap configs

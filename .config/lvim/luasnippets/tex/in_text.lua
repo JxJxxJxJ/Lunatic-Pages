@@ -2,50 +2,50 @@
 
 return {
 
-  -- LaTeX: Chapter
-  s({ trig = ";chap", snippetType = "autosnippet" }, {
-    c(1, {
-      t("\\chapter{"),
-      t("\\chapter*{"),
-    }),
-    i(2),
-    t("}"),
-    i(0),
-  }, { condition = in_text }),
+      -- LaTeX: Chapter
+      s({ trig = ";chap", snippetType = "autosnippet" }, {
+        c(1, {
+          t("\\chapter{"),
+          t("\\chapter*{"),
+        }),
+        i(2),
+        t("}"),
+        i(0),
+      }, { condition = in_text }),
 
-  -- LaTeX: Section
-  s({ trig = ";sec", snippetType = "autosnippet" }, {
-    c(1, {
-      t("\\section{"),
-      t("\\section*{"),
-    }),
-    i(2),
-    t("}"),
-    i(0),
-  }, { condition = in_text }),
+      -- LaTeX: Section
+      s({ trig = ";sec", snippetType = "autosnippet" }, {
+        c(1, {
+          t("\\section{"),
+          t("\\section*{"),
+        }),
+        i(2),
+        t("}"),
+        i(0),
+      }, { condition = in_text }),
 
-  -- LaTeX: Subsection
-  s({ trig = ";ssec", snippetType = "autosnippet" }, {
-    c(1, {
-      t("\\subsection{"),
-      t("\\subsection*{"),
-    }),
-    i(2),
-    t("}"),
-    i(0)
-  }, { condition = in_text }),
+      -- LaTeX: Subsection
+      s({ trig = ";ssec", snippetType = "autosnippet" }, {
+        c(1, {
+          t("\\subsection{"),
+          t("\\subsection*{"),
+        }),
+        i(2),
+        t("}"),
+        i(0)
+      }, { condition = in_text }),
 
-  -- LaTeX: Subsubsection
-  s({ trig = ";sssec", snippetType = "autosnippet" }, {
-    c(1, {
-      t("\\subsubsection{"),
-      t("\\subsubsection*{"),
-    }),
-    i(2),
-    t("}"),
-    i(0),
-  }, { condition = in_text }),
-},
+      -- LaTeX: Subsubsection
+      s({ trig = ";sssec", snippetType = "autosnippet" }, {
+        c(1, {
+          t("\\subsubsection{"),
+          t("\\subsubsection*{"),
+        }),
+        i(2),
+        t("}"),
+        i(0),
+      }, { condition = in_text }),
+    },
     {
       -- LaTeX: Inline math mode
       s({ trig = "mm", snippetType = "autosnippet" },
@@ -64,8 +64,11 @@ return {
 
       -- LaTeX: Single-letter variables
       s(
-        { trig = " ([^aeouAEOUY%^%A%E%O%Y%&y%s%|%$%(%=%)%[%]%{%}%.%,%!%:%?%/%\\%`%;%'%-%_])([%p%s])", regTrig = true,
-          wordTrig = false }
+        {
+          trig = " ([^aeouAEOUY%^%A%E%O%Y%&y%s%|%$%(%=%)%[%]%{%}%.%,%!%:%?%/%\\%`%;%'%-%_])([%p%s])",
+          regTrig = true,
+          wordTrig = false
+        }
         ,
         f(function(_, snip)
           return " $" .. snip.captures[1] .. "$" .. snip.captures[2]
@@ -94,7 +97,7 @@ return {
       ),
 
       -- LaTeX: Boldface
-      s("bf", fmt([[\textbf{{{}}}]], i(1)), { condition = in_text }),
+      s({ trig = "bf", priority = 4, snippetType = "autosnippet" }, fmt([[\textbf{{{}}}]], i(1)), { condition = in_text }),
 
       -- LaTeX: Teletype
       s("tt", fmt([[\texttt{{{}}}]], i(1)), { condition = in_text }),

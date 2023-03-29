@@ -43,6 +43,7 @@ local get_env = function(name)
   }
 end
 
+
 return {
   -- LuaSnips defaults
   s = require("luasnip.nodes.snippet").S,
@@ -69,7 +70,6 @@ return {
   postfix = require("luasnip.extras.postfix").postfix,
   types = require("luasnip.util.types"),
   parse = require("luasnip.util.parser").parse_snippet,
-
   -- my locals
   in_mathzone = in_mathzone,
   in_comment = in_comment,
